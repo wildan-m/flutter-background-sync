@@ -1,6 +1,6 @@
 # Flutter Background Health Data Sync
 
-A Flutter application demonstrating native iOS/Android background task execution with platform channel bridging. This sample shows the architecture patterns needed for any background service — health data sync, BLE scanning, location tracking, etc.
+A Flutter application that runs native iOS/Android background task execution behind a platform channel bridge. The same architecture carries any background service — health data sync, BLE scanning, location tracking, and so on.
 
 ## Architecture
 
@@ -26,7 +26,7 @@ A Flutter application demonstrating native iOS/Android background task execution
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## Key Patterns Demonstrated
+## Key patterns
 
 ### 1. Flutter MethodChannel Bridge
 - Dart `HealthSyncService` communicates with native code via `MethodChannel`
@@ -58,9 +58,9 @@ A Flutter application demonstrating native iOS/Android background task execution
 
 ## Mapping to BLE/iBeacon Scanning
 
-This health sync sample uses the exact same architecture needed for BLE background scanning. Here's how each component maps:
+The health sync path uses the exact same architecture BLE background scanning needs. Here's how each component maps:
 
-| This Sample | BLE Scanning Equivalent |
+| Health sync | BLE scanning equivalent |
 |---|---|
 | `BGTaskScheduler` | `CBCentralManager` + State Preservation & Restoration |
 | HealthKit permission | `CBCentralManager` authorization + `CLLocationManager.requestAlwaysAuthorization()` |
